@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@variant dark (.dark &);
+
+:root {
+  --coffee-bg: #F7F1E8;
+  --coffee-sec: #EFE3D3;
+  --coffee-card: #FDF8F3;
+  --coffee-nav: #F3E8DA;
+  --coffee-side: #F6ECE0;
+  --coffee-border: #D8C2A8;
+  --coffee-primary: #5C4033;
+  --coffee-secondary: #8B5E3C;
+  --coffee-accent: #C19A6B;
+  --coffee-text: #3D2B1F;
+  --coffee-text-muted: #6E5A4F;
+}
+
+.dark {
+  --coffee-bg: #18120E;
+  --coffee-sec: #241B16;
+  --coffee-card: #2E241D;
+  --coffee-nav: #201914;
+  --coffee-side: #261E18;
+  --coffee-border: #332920;
+  --coffee-primary: #C19A6B;
+  --coffee-secondary: #8B5E3C;
+  --coffee-accent: #D2B48C;
+  --coffee-text: #F5F1EC;
+  --coffee-text-muted: #C5BDB6;
+}
+
+@theme {
+  --font-sans: 'Poppins', sans-serif;
+
+  /* Custom Coffee colors */
+  --color-coffee-bg: var(--coffee-bg);
+  --color-coffee-sec: var(--coffee-sec);
+  --color-coffee-card: var(--coffee-card);
+  --color-coffee-nav: var(--coffee-nav);
+  --color-coffee-side: var(--coffee-side);
+  --color-coffee-border: var(--coffee-border);
+  --color-coffee-primary: var(--coffee-primary);
+  --color-coffee-secondary: var(--coffee-secondary);
+  --color-coffee-accent: var(--coffee-accent);
+  --color-coffee-text: var(--coffee-text);
+
+  /* Override/Map existing theme colors to coffee variables for seamless compatibility */
+  --color-white: var(--coffee-card);
+  --color-gray-50: var(--coffee-bg);
+  --color-gray-950: var(--coffee-bg);
+
+  --color-brown-50: var(--coffee-bg);
+  --color-brown-100: var(--coffee-border); /* borders */
+  --color-brown-200: var(--coffee-border); /* borders */
+  --color-brown-300: var(--coffee-accent);
+  --color-brown-400: var(--coffee-accent);
+  --color-brown-500: var(--coffee-secondary);
+  --color-brown-600: var(--coffee-secondary);
+  --color-brown-700: var(--coffee-primary);
+  --color-brown-800: var(--coffee-primary);
+  --color-brown-900: var(--coffee-text);
+
+  --color-dbrown-50: var(--coffee-text);
+  --color-dbrown-300: var(--coffee-accent);
+  --color-dbrown-400: var(--coffee-accent);
+  --color-dbrown-600: var(--coffee-primary);
+  --color-dbrown-700: var(--coffee-card);
+  --color-dbrown-800: var(--coffee-border);
+  --color-dbrown-900: var(--coffee-bg);
+
+  /* Animations */
+  --animate-fade-in: fade-in 0.4s ease-out;
+  --animate-slide-up: slide-up 0.5s ease-out;
+  --animate-scale-in: scale-in 0.3s ease-out;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slide-up {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scale-in {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+body {
+  @apply bg-coffee-bg text-coffee-text font-sans antialiased transition-colors duration-300;
+}
