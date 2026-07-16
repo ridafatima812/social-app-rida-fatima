@@ -8,4 +8,9 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  server: {
+    watch: {
+      ignored: ['**/1.PNG', '**/1.png']
+    }
+  }
 })
